@@ -1,0 +1,10 @@
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\obj\Debug\netcoreapp2.0\CRUDForum.csproj.CoreCompileInputs.cache
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\obj\Debug\netcoreapp2.0\CRUDForum.AssemblyInfoInputs.cache
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\obj\Debug\netcoreapp2.0\CRUDForum.AssemblyInfo.cs
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\bin\Debug\netcoreapp2.0\CRUDForum.deps.json
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\bin\Debug\netcoreapp2.0\CRUDForum.runtimeconfig.json
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\bin\Debug\netcoreapp2.0\CRUDForum.runtimeconfig.dev.json
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\bin\Debug\netcoreapp2.0\CRUDForum.dll
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\bin\Debug\netcoreapp2.0\CRUDForum.pdb
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\obj\Debug\netcoreapp2.0\CRUDForum.dll
+C:\Users\40809588897\Desktop\Programar\2018\2semana\CRUDForum\obj\Debug\netcoreapp2.0\CRUDForum.pdb
