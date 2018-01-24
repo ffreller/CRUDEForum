@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using CRUDForum.Models;
+using System;
 
 namespace CRUDForum.Controllers
 {
@@ -19,14 +20,44 @@ namespace CRUDForum.Controllers
         }
         [HttpGet("{id}", Name = "UsuarioAtual")]
         [Route("api/VerUsuario/{id}")]
-        public Usuarios GetUsuario(int id){
-            return dao.Listar().Where(x => x.id == id).FirstOrDefault();
+        public IActionResult GetUsuario(int id){
+            var rs = new JsonResult(dao.Listar().Where(u => u.id == id).FirstOrDefault());
+            rs.ContentType = "application/json";
+
+            if(rs.Value == null){ //Json value verification
+                rs.StatusCode = 204;
+                rs.Value = "Sem resultados";
+            }
+            else
+                rs.StatusCode = 200;
+            return Json(rs);
         }
         [HttpPost]
         [Route("api/CadastrarUsuario")]
         public IActionResult CadastrarUsuario([FromBody] Usuarios usuario){
-            dao.Cadastrar(usuario);
-            return CreatedAtRoute("UsuarioAtual", new{id = usuario.id}, usuario); //redireciona a rota para o Get para mostrar o que foi cadastrado
+            JsonResult rs;
+            try{
+                if(!ModelState.IsValid)
+                    return BadRequest(ModelState);
+                
+                rs = new JsonResult(dao.Cadastrar(usuario));
+                rs.ContentType = "application/json";
+                if(!Convert.ToBoolean(rs.Value))
+                {
+                    rs.StatusCode = 404;
+                    rs.Value = "Ocorreu um erro";
+                }
+                else
+                    rs.StatusCode = 200;
+            }
+            catch(System.Exception ex)
+            {
+                rs = new JsonResult("");
+                rs.StatusCode = 204;
+                rs.ContentType = "application/json";
+                rs.Value = ex.Message;
+            }
+            return Json(rs);
         }
         [HttpPut("{id}")]
         [Route("api/AtualizarUsuario/{id}")]
